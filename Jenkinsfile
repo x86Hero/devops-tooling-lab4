@@ -7,6 +7,8 @@ pipeline {
     stage('Clean') {
       steps{
         sh 'docker stop $(docker ps -aq) || true'
+        sh 'docker system prune -a'
+        sh 'docker builder prune -f'
         sh 'docker rm node-app -f || true'
         sh 'docker rmi node-app -f || true'
       }
@@ -23,6 +25,7 @@ pipeline {
     }
     stage('Test') {
       steps{
+        sh 'sleep 5'
         sh 'curl localhost'
       }
     }
