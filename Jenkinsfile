@@ -23,7 +23,7 @@ pipeline {
     }
     stage('Test') {
       steps{
-        sh 'curl localhost:5000'
+        sh 'curl localhost'
       }
     }
   }
