@@ -1,5 +1,5 @@
 FROM node:20.11.1-alpine
-RUN apt npm install -y
+RUN apt install npm -y
 RUN npm install
 COPY . .
 EXPOSE 5000

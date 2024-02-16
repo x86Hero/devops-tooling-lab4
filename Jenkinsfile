@@ -6,6 +6,7 @@ pipeline {
   stages {
     stage('Clean') {
       steps{
+        sh 'docker stop $(docker ps -aq)'
         sh 'docker rm node-app -f || true'
         sh 'docker rmi node-app -f || true'
       }
