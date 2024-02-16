@@ -1,6 +1,6 @@
-FROM node:20.11.1-alpine
+FROM node:latest
 RUN apt-get update
-RUN apt-get install npm -y
+RUN apt install npm -y
 RUN npm install
 COPY . .
 EXPOSE 5000
